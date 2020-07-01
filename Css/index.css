@@ -43,6 +43,7 @@ h1.text-wrap {
   padding: 3em 2em;
   font-size: 4.5em;
   width: 78%;
+  /* min-width: 10%; */
   height: 10%;
   font-weight: 600;
   font-family: "Yellowtail", cursive;
@@ -100,6 +101,7 @@ nav.navbar.sticky a {
 
 nav.navbar.sticky ul ul {
   background-color: #fff;
+  border: 1px solid #000;
 }
 
 nav.navbar.sticky ul ul::before {
@@ -129,6 +131,10 @@ div#menu.main-menu {
   margin-right: 30px !important;
 }
 
+.main-menu > ul > li {
+  margin: 0 10px !important;
+}
+
 .main-menu ul,
 .main-menu ul li {
   position: relative;
@@ -137,7 +143,7 @@ div#menu.main-menu {
   padding: 0;
 }
 
-.main-menu > ul > li::before {
+.main-menu > ul > li.down-list::before {
   bottom: 100%;
   left: 60%;
   border: solid transparent;
@@ -153,7 +159,7 @@ div#menu.main-menu {
   left: -10%;
 }
 
-nav.navbar.sticky .main-menu > ul > li::before {
+nav.navbar.sticky .main-menu > ul > li.down-list::before {
   border-top-color: #000;
 }
 
@@ -383,4 +389,48 @@ header.sticky .main-menu > ul > li span:hover > a {
   padding: 1% 5%;
   font-size: 10pt;
   font-weight: 500;
+}
+
+/* media queries */
+
+@media screen and (max-width: 700px) {
+  /* rotating text */
+  .text-wrap-container {
+    height: 300px;
+  }
+  h1.text-wrap {
+    font-size: 1.8em;
+  }
+  /* projects list */
+  .projects .project-wrap {
+    width: 80%;
+    margin: 2% auto;
+  }
+  .projects .project-wrap:hover {
+    transform: scale(1.1);
+  }
+  .projects .projects-container-title h1 {
+    font-size: 30pt;
+  }
+}
+
+@media screen and (min-width: 701px) and (max-width: 1024px) {
+  /* rotating text */
+  .text-wrap-container {
+    height: 400px;
+  }
+  h1.text-wrap {
+    font-size: 2.5em;
+  }
+  /* projects list */
+  .projects .project-wrap {
+    width: 45%;
+    margin: 2% auto;
+  }
+  .projects .project-wrap:hover {
+    transform: scale(1.2);
+  }
+  .projects .projects-container-title h1 {
+    font-size: 40pt;
+  }
 }
